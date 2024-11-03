@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алгоритмы сортировки на JavaScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- Меню -->
+<nav>
+  <a href="../index.html">Главная</a>
+  <a href="../pages/insertionSort.html">Сортировка вставкой</a>
+  <a href="../pages/bubbleSort.html">Сортировка пузырьком</a>
+  <a href="../pages/quickSort.html">Быстрая сортировка</a>
+  <a href="../pages/selectionSort.html">Сортировка выбором</a>
+  <a href="../pages/bogoSort.html">Сортировка бого</a>
+  <button class="menu-button" onclick="toggleMenu()">Меню</button>
+</nav>
+
+
+
+
+<!-- Хавер меню -->
+<div class="menu">
+  <a href="../index.html">Главная</a>
+  <a href="https://www.youtube.com/ronopoldo">Мой YouTube</a>
+  <a href="https://github.com/Ronopoldo">Мой GitHub</a>
+  <a href="https://www.deviantart.com/ronopoldo">Мой DeviantArt</a>
+  <a href="x.com/ronopoldo">Мой Twitter</a>
+</div>
+
+<!-- em-курсив; strong-полужирный -->
+
+
+
+<a href="../index.html">
+  <div class="padding">
+    <img class="hoverImg" src="../images/hover-beta.png" alt="Пример сортировки">
+  </div>
+</a>
+
+
+
+<div class="content">
+  <h1><strong>Быстрая сортировка (100 элементов)</strong></h1>
+  <h2 id="description">Описание</h2>
+  <p>
+    <strong>Алгоритмы сортировки</strong> — это <em>методы</em>, которые упорядочивают элементы в массиве или списке в определённом порядке.
+    <br/>Сортировка может быть выполнена по возрастанию или убыванию, в зависимости от <span>заданных условий</span>.
+  </p>
+</div>
+
+
+<!--<div class="controls">-->
+<!-- -->
+<!--</div>-->
+<div class="sortingBlock">
+  <div class="sortingContainer">
+    <div class="controls">
+      <button onclick="startAnimation(quickSort)">Пуск анимации</button>
+      <button onclick="stopAnimation()">Остановка анимации</button>
+      <button onclick="shuffleData()">Перемешать</button>
+      <input type="range" id="speed" min="0" max="1000" value="500" />
+    </div>
+
+    <div class="visualization"> <!-- Ползунок -->
+      <div id="bars"></div> <!-- Столбики -->
+    </div>
+
+    <div>
+      <h2 id="operations">Выполнено операций: 0</h2>
+      <h2 id="checks">Выполнено проверок: 0</h2>
+    </div>
+
+  </div>
+</div>
+
+<script src="../src/coreScripts/isSorted.js"></script>
+<script src="../src/coreScripts/bulkAnimationScript.js"></script>
+<script src="../src/coreScripts/animationScript.js"></script>
+<script src="../src/coreScripts/barsCreation.js"></script>
+<script src="../src/quickSort.js"></script>
+<script src="../src/coreScripts/buttonsCore.js"></script>
+
+<!-- СОРТИРОВООЧКАА -->
+<script>
+  let array = [];
+  for (let i = 0; i < 100; i++) {
+    array[i] = (100 - (i)) * 15;
+  }
+
+  let speed = 500;
+  let animationRunning = false;
+  const barsContainer = document.getElementById("bars");
+  const speedInput = document.getElementById("speed");
+  let checksHTML = document.getElementById("checks");
+  let opersHTML = document.getElementById("operations");
+
+  // РАБОТА ПОЛЗУНОЧКА
+  speedInput.addEventListener("input", () => {
+    speed = 1000 - speedInput.value;
+    console.log("Скорость:", speedInput.value);
+  });
+
+  createBars(array); // Создаём бары при загрузке страницы
+  let swaps = 0; // Счётчик для перемещений
+  let operations = 0; // Счётчик для сравнений
+
+
+
+
+
+</script>
+
+
+
+<!-- Скрипт для работы разворачивающегося меню -->
+<script>
+  function toggleMenu() {
+    const menuButton = document.querySelector('.menu-button');
+    const menu = document.querySelector('.menu');
+    menuButton.classList.toggle('active');
+    if (menuButton.classList.contains('active')) {
+      menu.style.display = 'block';
+    } else {
+      menu.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

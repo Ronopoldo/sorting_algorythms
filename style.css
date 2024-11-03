@@ -1,0 +1,195 @@
+/* 2.5) Подключение шрифтов: локальный, с Google Fonts, и веб-безопасный */
+@font-face {
+    font-family: 'localFont';
+    src: url('fonts/comfortaa.woff2') format('woff2');
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+
+
+/* 2.2) Работа с блоками: атрибуты background, border, margin, padding */
+body {
+    background: linear-gradient(to right, #3F002E, #9F4887);
+    margin: 10px;
+    font-family: 'localFont', 'Roboto', sans-serif;
+    align-items: center;
+}
+
+/* Для содержания */
+
+
+/* Контейнер для ВСЕГО блкоа сортировки */
+.sortingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Класс, где хранится контейнер баров */
+.visualization {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Центрируем бары по горизонтали */
+}
+
+/* А вот сбствн контейнер для баров */
+#bars {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+/* Стили для баров */
+.bar {
+    display: flex;
+    width: calc((100% / 25) - 2 * 1px); /* Высчитываем длину баров чтобы сайт динамичным был и не шакалился на телефоне */
+    height: 0px; /* Высота будет меняться в скрипте */
+    margin: 1px; /* Отступ  */
+    background-color: #ffffff;
+    transition: transform 0.5s;
+}
+
+
+
+.padding {
+    display: flex;
+    justify-content: center; /* Горизонтальное выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру, если нужно */
+    height: 200px; /* Можно задать фиксированную высоту для div, чтобы центрировать по вертикали */
+}
+
+.hoverImg {
+    width: 200px; /* Устанавливаем ширину изображения */
+    height: auto; /* Сохраняем пропорции */
+    border: none;
+}
+
+.content {
+    margin-top: -60px;
+    padding: 20px;
+    background: radial-gradient(circle, #140025, #66279C);
+    border: 1px solid #ffe800;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgb(255, 221, 0);
+}
+
+.sortingBlock {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background: radial-gradient(circle, #140025, #66279C);
+    border: 1px solid #ff0062;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgb(255, 221, 0);
+    max-width: 1000px;
+}
+
+/* 2.4) Использование наследования и каскадирования: стили для тегов */
+h1, h2, h3, h4, h5 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+
+p {
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #c17cf6;
+}
+
+/* 2.3) Селекторы для классов и тегов */
+nav {
+    background: radial-gradient(circle, #88A82A, #90A84C);;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+nav a {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+li {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Селектор для hover */
+nav a:hover {
+    color: #007BFF;
+}
+
+/* 2.7) Фиксированное разворачивающееся меню */
+.menu {
+    position: fixed;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    background-color: #444444;
+    padding: 10px;
+    display: none; /* Скрыто по умолчанию */
+}
+
+.menu a {
+    display: block;
+    color: #ffffff;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+}
+
+.menu a:hover {
+    background-color: #9f287e;
+}
+
+.menu-button {
+    display: block;
+    position: fixed;
+    top: 2px;
+    right: 10px;
+    background-color: #2f0f65;
+    color: #ffffff;
+    padding: 10px;
+    border: #00438a;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: #00837c;
+}
+
+.menu-button.active + .menu {
+    display: block; /* Меню показывается, когда кнопка активна */
+}
+
+/* 2.6) CSS-анимация (переход) */
+nav a {
+    transition: color 0.3s ease;
+}
+
+.menu a {
+    transition: background-color 0.3s ease;
+}
+
+/* Пример изображения */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    margin-bottom: 20px;
+}
