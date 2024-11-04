@@ -51,46 +51,68 @@
     <br/>Сортировка может быть выполнена по возрастанию или убыванию, в зависимости от <span>заданных условий</span>.
   </p>
 
-  <h2 id="history"><strong>История</strong></h2>
-
-  <h3>Краткая история алгоритмов сортировки</h3>
-  <ol>
-    <p><strong>Алгоритмы сортировки</strong> начали развиваться с середины XX века, когда возросла потребность в упорядочивании данных для обработки на первых компьютерах.</p>
-    <li><strong>1950-е:</strong> Появление первых алгоритмов — пузырьковой сортировки и сортировки вставками, предложенных для упрощения сортировки списков чисел.</li>
-    <li><strong>1960-е:</strong> Разработка более сложных алгоритмов, таких как сортировка слиянием (Джон фон Нейман) и быстрая сортировка (Тони Хоар).</li>
-    <li><strong>1980-е и далее:</strong> Появление оптимизаций и гибридных методов (сортировка Тима). Алгоритмы стали применяться в различных областях — от баз данных до информационных систем.</li>
-    <p>Алгоритмы продолжают совершенствоваться, обеспечивая эффективную работу с большими объемами данных.</p>
-  </ol>
-
-  <!-- Список алгоритмов сортировки -->
-  <h3>Некоторые алгоритмы сортировки</h3>
-  <ul>
-    <li>Пузырьковая сортировка</li>
-    <li>Сортировка вставками</li>
-    <li>Быстрая сортировка</li>
-    <li>Пирамидальная сортировка</li>
-    <li>Сортировка слиянием</li>
-  </ul>
-
-  <!-- Картинка -->
-  <h2 id="image">Пример визуализации сортировки вставками</h2>
-  <br>
-  <img src="../images/Insertion-sort-example.gif" alt="Пример сортировки">
-  <br>
-  <!-- Видео -->
-  <h2 id="video">Видео о сортировке</h2>
-  <br>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ZZuD6iUe3Pc?si=HP_1h7D-iOtVboCi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br>
-  <!-- Ссылки и якоря -->
-  <h4 id="trivia">Полезные ссылки</h4>
-  <p>Узнать больше про <a href="https://ru.wikipedia.org/wiki/Алгоритм_сортировки" target="_blank">алгоритмы сортировки</a> можно на Википедии.</p>
-
-  <!-- Разрыв строки -->
-  <p>Сделал Филиппов Иван из ПИН-14<br>11 октября</p>
-
-  <h5>2024</h5>
+  <h2 id="link">
+    <a href="./bogoSortBeta.html">Bogo Сорт - бета версия улучшенной анимации</a>
+  </h2>
 </div>
+
+
+<!--<div class="controls">-->
+<!-- -->
+<!--</div>-->
+<div class="sortingBlock">
+  <div class="sortingContainer">
+    <div class="controls">
+      <button onclick="startAnimation(bogoSort)">Пуск анимации</button>
+      <button onclick="stopAnimation()">Остановка анимации</button>
+      <button onclick="shuffleData()">Перемешать</button>
+      <input type="range" id="speed" min="0" max="1000" value="500" />
+    </div>
+
+    <div class="visualization"> <!-- Ползунок -->
+      <div id="bars"></div> <!-- Столбики -->
+    </div>
+
+    <div>
+      <h2 id="operations">Выполнено операций: 0</h2>
+      <h2 id="checks">Выполнено проверок: 0</h2>
+    </div>
+
+  </div>
+</div>
+
+<script src="../src/coreScripts/isSorted.js"></script>
+<script src="../src/coreScripts/animationScript.js"></script>
+<script src="../src/coreScripts/barsCreation.js"></script>
+<script src="../src/bogoSort.js"></script>
+<script src="../src/coreScripts/buttonsCore.js"></script>
+
+<!-- СОРТИРОВООЧКАА -->
+<script>
+
+  let array = [];
+  for (let i = 0; i < 6; i++) {
+    array[i] = (100 - (i * (100/6))) * 15;
+  }
+
+  let animationRunning = false;
+  let speed = 500;
+  const barsContainer = document.getElementById("bars");
+  const speedInput = document.getElementById("speed");
+  let checksHTML = document.getElementById("checks");
+  let opersHTML = document.getElementById("operations");
+
+  // РАБОТА ПОЛЗУНОЧКА
+  speedInput.addEventListener("input", () => {
+    speed = 1000 - speedInput.value;
+    console.log("Скорость:", speedInput.value);
+  });
+
+  createBars(array); // Создаём бары при загрузке страницы
+
+</script>
+
+
 
 <!-- Скрипт для работы разворачивающегося меню -->
 <script>

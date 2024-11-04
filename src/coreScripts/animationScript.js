@@ -2,6 +2,7 @@ function animateBars(index1, index2, speed) {
     const bars = document.querySelectorAll(".bar");
     const bar1 = bars[index1];
     const bar2 = bars[index2];
+
     // console.log(bar1)
 
 

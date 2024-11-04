@@ -22,5 +22,8 @@ function shuffleData() {
         createBars(array);
         opersHTML.textContent = `Выполнено операций: 0`
         checksHTML.textContent = `Выполнено проверок: 0`
+        if (document.getElementById('swapsHTML')) {
+            swapsHTML.textContent = `Выполнено свапов: 0`;
+        }
     }
 }

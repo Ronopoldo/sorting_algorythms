@@ -44,7 +44,7 @@
 
 
 <div class="content">
-  <h1><strong>Сортировка выбором</strong></h1>
+  <h1><strong>Сортировка Бого (улучшенная анимация)</strong></h1>
   <h2 id="description">Описание термина</h2>
   <p>
     <strong>Алгоритмы сортировки</strong> — это <em>методы</em>, которые упорядочивают элементы в массиве или списке в определённом порядке.
@@ -59,7 +59,7 @@
 <div class="sortingBlock">
   <div class="sortingContainer">
     <div class="controls">
-      <button onclick="startAnimation(selectionSort)">Пуск анимации</button>
+      <button onclick="startAnimation(bogoSortBeta)">Пуск анимации</button>
       <button onclick="stopAnimation()">Остановка анимации</button>
       <button onclick="shuffleData()">Перемешать</button>
       <input type="range" id="speed" min="0" max="1000" value="500" />
@@ -70,8 +70,8 @@
     </div>
 
     <div>
-      <h2 id="operations">Выполнено сравнений: 0</h2>
-      <h2 id="checks">Выполнено замен: 0</h2>
+      <h2 id="operations">Выполнено операций: 0</h2>
+      <h2 id="checks">Выполнено проверок: 0</h2>
     </div>
 
   </div>
@@ -80,15 +80,15 @@
 <script src="../src/coreScripts/isSorted.js"></script>
 <script src="../src/coreScripts/animationScript.js"></script>
 <script src="../src/coreScripts/barsCreation.js"></script>
-<script src="../src/selectionSort.js"></script>
+<script src="../src/bogoSortBeta.js"></script>
 <script src="../src/coreScripts/buttonsCore.js"></script>
 
 <!-- СОРТИРОВООЧКАА -->
 <script>
 
   let array = [];
-  for (let i = 0; i < 25; i++) {
-    array[i] = (100 - (i * 4)) * 15;
+  for (let i = 0; i < 10; i++) {
+    array[i] = (100 - (i * 10)) * 10;
   }
 
   let animationRunning = false;

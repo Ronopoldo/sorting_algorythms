@@ -8,7 +8,7 @@ async function bubbleSort(array) {
     opersHTML.textContent = `Выполнено операций: ${operations}`
 
     while (sorted == false) {
-        let sorted = isSorted(array);
+        let sorted = await isSorted(array, speed);
         checks++;
         checksHTML.textContent = `Выполнено проверок: ${checks}`
         if (sorted) break;
