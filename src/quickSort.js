@@ -2,12 +2,14 @@ async function quickSort(array, speed) {
     swaps = 0;
     operations = 0;
     await quickSortRecursive(array, 0, array.length - 1);
+    if (animationRunning == false) return { operations: operations, checks: checks };
     if ((array.length) > 32) { await isSorted(array, speed / 100); }
     else {await isSorted(array, speed); }
 }
 
 async function quickSortRecursive(array, low, high) {
     if (low < high) {
+        if (animationRunning == false) return { operations: operations, checks: checks };
         let keyInd = await partition(array, low, high);
         await quickSortRecursive(array, low, keyInd - 1);
         await quickSortRecursive(array, keyInd + 1, high);
@@ -19,6 +21,7 @@ async function partition(array, low, high) { // low, high - нач. и кон. �
     let i = low - 1;
 
     for (let j = low; j < high; j++) {
+        if (animationRunning == false) return { operations: operations, checks: checks };
         operations++;
         opersHTML.textContent = `Выполнено операций: ${operations}`;
         checksHTML.textContent = `Выполнено перемещений: ${swaps}`;
@@ -33,6 +36,7 @@ async function partition(array, low, high) { // low, high - нач. и кон. �
 
 async function change(array, i, j) {
     if (i !== j) {
+        if (animationRunning == false) return { operations: operations, checks: checks };
         // Свапаем
         [array[i], array[j]] = [array[j], array[i]];
         swaps++;
