@@ -21,6 +21,7 @@ async function insertionSort(array) {
         while (true) {
 
             operations++
+            if (animationRunning == false) return { operations: operations, checks: checks };
             if (array[pos - 1] > array[pos]) {
                 tempVar = array[pos - 1]
                 array[pos - 1] = array[pos]
