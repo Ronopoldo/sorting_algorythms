@@ -17,7 +17,7 @@ function stopAnimation() {
 
 // Перемешивание данных
 function shuffleData() {
-    if (animationRunning == false) {
+    stopAnimation()
         array = array.sort(() => Math.random() - 0.5);
         createBars(array);
         opersHTML.textContent = `Выполнено операций: 0`
@@ -25,5 +25,4 @@ function shuffleData() {
         if (document.getElementById('swapsHTML')) {
             swapsHTML.textContent = `Выполнено свапов: 0`;
         }
-    }
 }
