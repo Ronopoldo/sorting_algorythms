@@ -44,15 +44,35 @@
 
 
 <div class="content">
+
   <h1><strong>Сортировка Бого</strong></h1>
-  <h2 id="description">Описание термина</h2>
+  <img class="sortImages" src="../images/forSortings/bogo.gif" alt="Сортировка Бого - визуализация">
+  <h2>Краткая информация</h2>
   <p>
-    <strong>Алгоритмы сортировки</strong> — это <em>методы</em>, которые упорядочивают элементы в массиве или списке в определённом порядке.
-    <br/>Сортировка может быть выполнена по возрастанию или убыванию, в зависимости от <span>заданных условий</span>.
+    <strong>Bogo Sort</strong> — это шуточный <em>алгоритм сортировки</em>, который пытается случайным образом
+    перемешивать элементы до тех пор, пока они не окажутся в отсортированном порядке.<br/>
+    Его суть — в случайных перестановках, что делает его крайне неэффективным для практического использования.
   </p>
 
-  <h2 id="link">
-    <a href="./bogoSortBeta.html">Bogo Сорт - бета версия улучшенной анимации</a>
+  <h2>Алгоритм</h2>
+  <ol>
+    <li>Перемешать элементы массива случайным образом.</li>
+    <li>Проверить, отсортирован ли массив. Если да, завершить алгоритм.</li>
+    <li>Если нет, повторить с первого шага.</li>
+  </ol>
+
+  <h2>Сложность</h2>
+  <h3>
+    <li>Худшее время: O(∞)</li>
+    <li>Лучшее время: O(n)</li>
+    <li>Среднее время: O(n * n!)</li>
+  </h3>
+  <h2>Исходный код:</h2>
+  <a href="https://github.com/Ronopoldo/BogoSort" target="_blank">Ссылка на код на моём GitHub</a>
+
+
+  <h2>
+    <a class = "inSiteLinks" href="./bogoSortBeta.html">Bogo Sort – бета версия улучшенной анимации</a>
   </h2>
 </div>
 
@@ -63,9 +83,9 @@
 <div class="sortingBlock">
   <div class="sortingContainer">
     <div class="controls">
-      <button onclick="startAnimation(bogoSort)">Пуск анимации</button>
-      <button onclick="stopAnimation()">Остановка анимации</button>
-      <button onclick="shuffleData()">Перемешать</button>
+      <button class="controlButton" onclick="startAnimation(bogoSort)">Пуск анимации</button>
+      <button class="controlButton" onclick="stopAnimation()">Остановка анимации</button>
+      <button class="controlButton" onclick="shuffleData()">Перемешать</button>
       <input type="range" id="speed" min="0" max="1000" value="500" />
     </div>
 

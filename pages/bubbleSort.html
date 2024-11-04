@@ -44,12 +44,32 @@
 
 
 <div class="content">
-  <h1><strong>Сортировка пузырьком</strong></h1>
-  <h2 id="description">Описание термина</h2>
+
+  <h1><strong>Сортировка Пузырьком</strong></h1>
+  <img class="sortImages" src="../images/forSortings/bubble.gif" alt="Сортировка Пузырьком - визуализация">
+  <h2>Краткая информация</h2>
   <p>
-    <strong>Алгоритмы сортировки</strong> — это <em>методы</em>, которые упорядочивают элементы в массиве или списке в определённом порядке.
-    <br/>Сортировка может быть выполнена по возрастанию или убыванию, в зависимости от <span>заданных условий</span>.
+    <strong>Bubble Sort</strong> — это простейший <em>алгоритм сортировки</em>, который проходит много раз по массиву и
+    меняет соседние элементы если они стоят не в своём порядке.<br/>
+    Это один из самых основ алгоритмов и его очень часто используют для обучения.
   </p>
+
+  <h2>Алгоритм</h2>
+  <ol>
+    <li>Повторять проходы по массиву: сравнивать соседние элементы, обменять их при необходимости (если i > (i + 1)).</li>
+    <li>Проверить, отсортирован ли массив. Если да, завершить алгоритм.</li>
+    <li>Если нет, повторить с первого шага.</li>
+  </ol>
+
+  <h2>Сложность</h2>
+  <h3>
+    <li>Худшее время: O(n<span class="square">2</span>)</li>
+    <li>Лучшее время: O(n)</li>
+    <li>Среднее время: O(n<span class="square">2</span>)</li>
+  </h3>
+
+  <h2>Исходный код:</h2>
+  <a href="https://github.com/Ronopoldo/BubbleSort" target="_blank">Ссылка на код на моём GitHub</a>
 </div>
 
 
@@ -59,9 +79,9 @@
 <div class="sortingBlock">
   <div class="sortingContainer">
     <div class="controls">
-      <button onclick="startAnimation(bubbleSort)">Пуск анимации</button>
-      <button onclick="stopAnimation()">Остановка анимации</button>
-      <button onclick="shuffleData()">Перемешать</button>
+      <button class="controlButton" onclick="startAnimation(bubbleSort)">Пуск анимации</button>
+      <button class="controlButton" onclick="stopAnimation()">Остановка анимации</button>
+      <button class="controlButton" onclick="shuffleData()">Перемешать</button>
       <input type="range" id="speed" min="0" max="1000" value="500" />
     </div>
 

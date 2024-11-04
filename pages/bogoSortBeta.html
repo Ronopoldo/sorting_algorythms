@@ -45,12 +45,24 @@
 
 <div class="content">
   <h1><strong>Сортировка Бого (улучшенная анимация)</strong></h1>
-  <h2 id="description">Описание термина</h2>
+  <h2>Что здесь?</h2>
   <p>
-    <strong>Алгоритмы сортировки</strong> — это <em>методы</em>, которые упорядочивают элементы в массиве или списке в определённом порядке.
-    <br/>Сортировка может быть выполнена по возрастанию или убыванию, в зависимости от <span>заданных условий</span>.
+    Изначально я хотел написать скрипт для плавной анимации BogoSort'а, но у меня не хватило времени.<br>
+    В целом, сортировка работает, но есть несколько багов, что вызывает нестабильную работу анимации.<br>
+    <br>
+    В целом, если Вам интересно посмотреть то, на чём я остановился, то пожалуйста :-)<br>
   </p>
+  <h2>ВИЗУАЛИЗАЦИЯ МОЖЕТ И СРАБОТАТЬ, НО ВОЗМОЖНЫ БАГИ!</h2>
+  <h3>Среди багов:</h3>
+  <li>Не работает ползунок скорости</li>
+  <li>Стобики могут «уезжать» за пределы экрана влево и вправо</li>
+  <li>Иногда столбики «слипаются»</li>
+  <li>Может показать конец работы анимации, однако конец не будет достигнут на самом деле</li>
+  <h2>
+    <a class = "inSiteLinks" href="./bogoSort.html">Обычный Bogo Sort</a>
+  </h2>
 </div>
+
 
 
 <!--<div class="controls">-->
@@ -59,9 +71,9 @@
 <div class="sortingBlock">
   <div class="sortingContainer">
     <div class="controls">
-      <button onclick="startAnimation(bogoSortBeta)">Пуск анимации</button>
-      <button onclick="stopAnimation()">Остановка анимации</button>
-      <button onclick="shuffleData()">Перемешать</button>
+      <button class="controlButton" onclick="startAnimation(bogoSortBeta)">Пуск анимации</button>
+      <button class="controlButton" onclick="stopAnimation()">Остановка анимации</button>
+      <button class="controlButton" onclick="shuffleData()">Перемешать</button>
       <input type="range" id="speed" min="0" max="1000" value="500" />
     </div>
 

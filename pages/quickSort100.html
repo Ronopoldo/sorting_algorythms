@@ -44,12 +44,19 @@
 
 
 <div class="content">
-  <h1><strong>Быстрая сортировка (100 элементов)</strong></h1>
-  <h2 id="description">Описание</h2>
+
+  <h1><strong>Быстрая сортировка – пример на 100 элементов</strong></h1>
+  <h2>Что здесь?</h2>
   <p>
-    <strong>Алгоритмы сортировки</strong> — это <em>методы</em>, которые упорядочивают элементы в массиве или списке в определённом порядке.
-    <br/>Сортировка может быть выполнена по возрастанию или убыванию, в зависимости от <span>заданных условий</span>.
+    <strong>Quick Sort</strong> — это очень быстрый <em>алгоритм сортировки</em>. В этом лучше всего можно убедиться
+    при сортировке действительно больших массивов.<br>
+    Здесь представлен массив длиной в 100 элементов, с которым QuickSort справится во много раз эффективнее,
+    нежели другие алгоритмы.<br>
+    По окончании сортировки посмотрите на количество операций, которое будет очень малым.
   </p>
+  <h2>
+    <a class = "inSiteLinks" href="./quickSort.html">Quick Sort – основная страница</a>
+  </h2>
 </div>
 
 
@@ -59,9 +66,9 @@
 <div class="sortingBlock">
   <div class="sortingContainer">
     <div class="controls">
-      <button onclick="startAnimation(quickSort)">Пуск анимации</button>
-      <button onclick="stopAnimation()">Остановка анимации</button>
-      <button onclick="shuffleData()">Перемешать</button>
+      <button class="controlButton" onclick="startAnimation(quickSort)">Пуск анимации</button>
+      <button class="controlButton" onclick="stopAnimation()">Остановка анимации</button>
+      <button class="controlButton" onclick="shuffleData()">Перемешать</button>
       <input type="range" id="speed" min="0" max="1000" value="500" />
     </div>
 

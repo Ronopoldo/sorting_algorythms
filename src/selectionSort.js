@@ -34,8 +34,9 @@ async function selectionSort(array) {
             swaps++;
             opersHTML.textContent = `Выполнено замен: ${swaps}`;
             await animateBars(lockedpos, minIndex, speed);
+
         }
-        bars[minIndex].style.backgroundColor = '#ffffff';
+        bars[minIndex].style.backgroundColor = '#ffff00';
 
     }
 

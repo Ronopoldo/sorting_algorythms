@@ -44,12 +44,41 @@
 
 
 <div class="content">
+
   <h1><strong>Сортировка выбором</strong></h1>
-  <h2 id="description">Описание термина</h2>
+  <img class="sortImages" src="../images/forSortings/selection.gif" alt="Сортировка Выбором - визуализация">
+  <h2>Краткая информация</h2>
   <p>
-    <strong>Алгоритмы сортировки</strong> — это <em>методы</em>, которые упорядочивают элементы в массиве или списке в определённом порядке.
-    <br/>Сортировка может быть выполнена по возрастанию или убыванию, в зависимости от <span>заданных условий</span>.
+    <strong>Selection Sort</strong> — это стандартный <em>алгоритм сортировки</em>, который работает посредством нахождения
+    минимального элемента неотсортированной части массива и последующего его перемещения на нулевую позицию.<br/>
+    Те элементы, которые были перемещены влево, «закрепляются».<br>
+    Алгоритм немного эффективнее других сортировок, но всё ещё неэффективен.
   </p>
+
+  <h2>Интересное</h2>
+  <p>
+    Самое интересное у этого алгоритма то, что для длины массива N, количество операций будет <strong>ВСЕГДА ОДИНАКОВЫМ</strong>,
+    вне зависимости от расположения элементов.<br>
+    То есть, как не мешай массив, всё время будет использоваться одинаковое количество времени. (для 25 элементов – 300 сравнений)
+  </p>
+  <h2>Алгоритм</h2>
+  <ol>
+    <li>Находим номер минимального элемента массива.</li>
+    <li>Меняем местами этот элемент и наименьший элемент <strong>неотсортированной</strong> области.</li>
+    <li>Сортируем «хвост» массива, исключив уже отсортированную часть (те элементы, что мы перемещали на шаге 2 влево).</li>
+  </ol>
+
+  <h2>Сложность</h2>
+  <h3>
+    <li>Худшее время: O(n<span class="square">2</span>)</li>
+    <li>Лучшее время: O(n<span class="square">2</span>)</li>
+    <li>Среднее время: O(n<span class="square">2</span>)</li>
+    <li>Вообще ЛЮБОЕ время: O(n<span class="square">2</span>)</li>
+  </h3>
+
+  <h2>Исходный код:</h2>
+  <a href="https://github.com/Ronopoldo/SelectionSort" target="_blank">Ссылка на код на моём GitHub</a>
+
 </div>
 
 
@@ -59,9 +88,9 @@
 <div class="sortingBlock">
   <div class="sortingContainer">
     <div class="controls">
-      <button onclick="startAnimation(selectionSort)">Пуск анимации</button>
-      <button onclick="stopAnimation()">Остановка анимации</button>
-      <button onclick="shuffleData()">Перемешать</button>
+      <button class="controlButton" onclick="startAnimation(selectionSort)">Пуск анимации</button>
+      <button class="controlButton" onclick="stopAnimation()">Остановка анимации</button>
+      <button class="controlButton" onclick="shuffleData()">Перемешать</button>
       <input type="range" id="speed" min="0" max="1000" value="500" />
     </div>
 

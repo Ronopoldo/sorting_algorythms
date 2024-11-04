@@ -2,7 +2,8 @@ async function quickSort(array, speed) {
     swaps = 0;
     operations = 0;
     await quickSortRecursive(array, 0, array.length - 1);
-    await isSorted(array, speed)
+    if ((array.length) > 32) { await isSorted(array, speed / 100); }
+    else {await isSorted(array, speed); }
 }
 
 async function quickSortRecursive(array, low, high) {
@@ -42,8 +43,8 @@ async function change(array, i, j) {
         createBars(array);
 
         // Ну тип длина анимации, но анимации нет, поэтому длина афкшнья
-        if ((array.length) > 32) { await new Promise(resolve => setTimeout(resolve, speed / 100)); }
-        else {await new Promise(resolve => setTimeout(resolve, speed));}
-
+        // if ((array.length) > 32) { await new Promise(resolve => setTimeout(resolve, speed / 100)); }
+        // else {await new Promise(resolve => setTimeout(resolve, speed));}
+        await new Promise(resolve => setTimeout(resolve, speed));
     }
 }

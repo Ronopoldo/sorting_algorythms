@@ -4,10 +4,7 @@
     src: url('fonts/comfortaa.woff2') format('woff2');
 }
 
-
-
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
-
 
 
 /* 2.2) Работа с блоками: атрибуты background, border, margin, padding */
@@ -53,6 +50,18 @@ body {
     transition: transform 0.5s;
 }
 
+.sortImages{
+    float: right;
+    width: 274px;
+}
+
+.inSiteLinks{
+    display: flex;
+    justify-content: center;
+    color: #00fff2;
+    stroke-width: 2px;
+    stroke: #2f0f65;
+}
 
 
 .padding {
@@ -77,6 +86,11 @@ body {
     box-shadow: 0 4px 8px rgb(255, 221, 0);
 }
 
+.square {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+
 .sortingBlock {
     margin-top: 20px;
     margin-left: auto;
@@ -98,24 +112,22 @@ h1, h2, h3, h4, h5 {
 
 p {
     color: #ffffff;
-    line-height: 1.6;
 }
 
 a {
     text-decoration: none;
-    color: #c17cf6;
+    color: #c78ef5;
 }
 
 /* 2.3) Селекторы для классов и тегов */
 nav {
-    background: radial-gradient(circle, #88A82A, #90A84C);;
+    background: radial-gradient(circle, #8dad2f, #5a7902);;
     padding: 10px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 2px -2px gray;
+    z-index: 1024;
 }
 
 nav a {
@@ -125,24 +137,18 @@ nav a {
 }
 
 li {
-    text-decoration: none;
     color: #ffffff;
-}
-
-/* Селектор для hover */
-nav a:hover {
-    color: #007BFF;
 }
 
 /* 2.7) Фиксированное разворачивающееся меню */
 .menu {
     position: fixed;
     top: 30px;
-    left: 0;
-    width: 100%;
-    background-color: #444444;
+    right: 0;
+    width: 25%;
+    background-color: #333333;
     padding: 10px;
-    display: none; /* Скрыто по умолчанию */
+    display: none; /* ШТука, которая в js будет меняться */
 }
 
 .menu a {
@@ -156,6 +162,7 @@ nav a:hover {
     background-color: #9f287e;
 }
 
+/* Кнопка "Меню" */
 .menu-button {
     display: block;
     position: fixed;
@@ -166,7 +173,27 @@ nav a:hover {
     padding: 10px;
     border: #00438a;
     border-radius: 5px;
+    cursor: pointer; /* Шоб курсор менялся на палец */
+}
+
+.controls {
+    display: flex;
+}
+
+.controlButton {
+    display: block;
+    position: relative;
+    background-color: #6e3ac0;
+    color: #ffffff;
+    padding: 10px;
+    border: #00438a;
+    border-radius: 5px;
     cursor: pointer;
+    margin: 5px;
+}
+
+.controlButton:hover {
+    background-color: #007BFF; /* Цвет кнопки при наведении */
 }
 
 .menu-button:hover {
@@ -177,19 +204,49 @@ nav a:hover {
     display: block; /* Меню показывается, когда кнопка активна */
 }
 
-/* 2.6) CSS-анимация (переход) */
-nav a {
-    transition: color 0.3s ease;
-}
-
-.menu a {
-    transition: background-color 0.3s ease;
-}
-
 /* Пример изображения */
 img {
     max-width: 100%;
     height: auto;
     border: 2px solid #ddd;
     margin-bottom: 20px;
+}
+
+/* Адаптивность меню для телефонов (768 стандартный порог) */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin-top: 5px;
+        margin-right: 15px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: calc((9 / 16) * 100%);
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu {
+        position: fixed;
+        top: calc(30 * 6px - 15px);
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .controls {
+        display: block;
+    }
 }
