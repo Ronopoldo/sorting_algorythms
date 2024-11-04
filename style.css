@@ -249,4 +249,8 @@ img {
     .controls {
         display: block;
     }
+
+    .padding{
+        margin-top: 120px
+    }
 }
