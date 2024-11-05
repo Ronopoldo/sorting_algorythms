@@ -66,14 +66,14 @@ body {
 
 .padding {
     display: flex;
-    justify-content: center; /* Горизонтальное выравнивание по центру */
-    align-items: center; /* Вертикальное выравнивание по центру, если нужно */
-    height: 200px; /* Можно задать фиксированную высоту для div, чтобы центрировать по вертикали */
+    justify-content: center; 
+    align-items: center; 
+    height: 200px; 
 }
 
 .hoverImg {
-    width: 200px; /* Устанавливаем ширину изображения */
-    height: auto; /* Сохраняем пропорции */
+    width: 200px;
+    height: auto;
     border: none;
 }
 
