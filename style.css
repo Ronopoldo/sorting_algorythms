@@ -26,6 +26,15 @@ body {
     padding: 20px;
 }
 
+#mergeSort {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 450px; /* Пример фиксированной высоты */
+}
+
+
 /* Класс, где хранится контейнер баров */
 .visualization {
     width: 100%;
@@ -252,5 +261,13 @@ img {
 
     .padding{
         margin-top: 120px
+    }
+
+    #mergeSort {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        height: 550px; /* Пример фиксированной высоты */
     }
 }

@@ -46,17 +46,17 @@
 
 <div class="content">
 
-  <h1><strong>Быстрая сортировка – пример на 100 элементов</strong></h1>
+  <h1><strong>Сортировка слиянием – пример на 100 элементов</strong></h1>
   <h2>Что здесь?</h2>
   <p>
-    <strong>Quick Sort</strong> — это очень быстрый <em>алгоритм сортировки</em>. В этом лучше всего можно убедиться
+    <strong>Merge Sort</strong> — это очень быстрый и стабильный <em>алгоритм сортировки</em>. В этом лучше всего можно убедиться
     при сортировке действительно больших массивов.<br>
-    Здесь представлен массив длиной в 100 элементов, с которым QuickSort справится во много раз эффективнее,
+    Здесь представлен массив длиной в 100 элементов, с которым MergeSort справится во много раз эффективнее,
     нежели другие алгоритмы.<br>
     По окончании сортировки посмотрите на количество операций, которое будет очень малым.
   </p>
   <h2>
-    <a class = "inSiteLinks" href="./quickSort.html">Quick Sort – основная страница</a>
+    <a class = "inSiteLinks" href="./mergeSort.html">Merge Sort – основная страница</a>
   </h2>
 </div>
 
@@ -67,7 +67,7 @@
 <div class="sortingBlock">
   <div class="sortingContainer">
     <div class="controls">
-      <button class="controlButton" onclick="startAnimation(quickSort)">Пуск анимации</button>
+      <button class="controlButton" onclick="startAnimation(mergeSort)">Пуск анимации</button>
       <button class="controlButton" onclick="stopAnimation()">Остановка анимации</button>
       <button class="controlButton" onclick="shuffleData()">Перемешать</button>
       <input type="range" id="speed" min="0" max="1000" value="500" />
@@ -88,9 +88,24 @@
 <script src="../src/coreScripts/isSorted.js"></script>
 <script src="../src/coreScripts/bulkAnimationScript.js"></script>
 <script src="../src/coreScripts/animationScript.js"></script>
-<script src="../src/coreScripts/barsCreation.js"></script>
-<script src="../src/quickSort.js"></script>
+<!--<script src="../src/coreScripts/barsCreation.js"></script>-->
+<script src="../src/mergeSort.js"></script>
 <script src="../src/coreScripts/buttonsCore.js"></script>
+
+<script>
+  function createBars(array) {
+    const fixedHeight = 400;
+    barsContainer.innerHTML = "";
+    const maxValue = Math.max(...array);
+    barsContainer.style.height = `${fixedHeight}px`;
+    array.forEach((value, index) => {
+      const bar = document.createElement("div");
+      bar.classList.add("bar");
+      bar.style.height = `${(value / maxValue) * fixedHeight}px`;
+      barsContainer.appendChild(bar);
+    });
+  }
+</script>
 
 <!-- СОРТИРОВООЧКАА -->
 <script>

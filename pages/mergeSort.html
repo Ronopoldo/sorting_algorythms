@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алгоритмы сортировки на JavaScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- Меню -->
+<nav>
+  <a href="../index.html">Главная</a>
+  <a href="../pages/insertionSort.html">Сортировка вставкой</a>
+  <a href="../pages/bubbleSort.html">Сортировка пузырьком</a>
+  <a href="../pages/quickSort.html">Быстрая сортировка</a>
+  <a href="../pages/selectionSort.html">Сортировка выбором</a>
+  <a href="../pages/bogoSort.html">Сортировка бого</a>
+  <a href="../pages/mergeSort.html">Сортировка слиянием</a>
+  <button class="menu-button" onclick="toggleMenu()">Меню</button>
+</nav>
+
+<!-- Хавер меню -->
+<div class="menu">
+  <a href="../index.html">Главная</a>
+  <a href="https://www.youtube.com/ronopoldo">Мой YouTube</a>
+  <a href="https://github.com/Ronopoldo">Мой GitHub</a>
+  <a href="https://www.deviantart.com/ronopoldo">Мой DeviantArt</a>
+  <a href="x.com/ronopoldo">Мой Twitter</a>
+</div>
+
+<a href="../index.html">
+  <div class="padding">
+    <img class="hoverImg" src="../images/hover-beta.png" alt="Пример сортировки">
+  </div>
+</a>
+
+<div class="content">
+
+  <h1><strong>Сортировка слиянием</strong></h1>
+  <img class="sortImages" src="../images/forSortings/merge.gif" alt="Сортировка слиянием - визуализация">
+  <h2>Краткая информация</h2>
+  <p>
+    <strong>Merge Sort</strong> — это стабильный <em>алгоритм сортировки</em>, который делит массив на части и затем объединяет их в правильном порядке.<br/>
+    Его суть в том, что массив рекурсивно делится пополам, пока каждая часть не станет длиной 1. Затем небольшие части последовательно <strong>сливаются</strong> в более крупные, уже отсортированные массивы. Так процесс продолжается, пока весь массив не будет отсортирован.
+  </p>
+
+  <h2>Интересное</h2>
+  <p>
+    Используется в куче популярных языков программирования, например:
+    <li>Java</li>
+    <li>Python</li>
+    <li>C#</li>
+    <li>Ruby</li>
+  </p>
+  <h2>Трудности при создании этой страницы</h2>
+  <p>
+    Одной из сложностей создания страницы было правильно визуализировать этап <strong>слияния</strong>. В процессе сортировки элементы объединяются из двух временных массивов обратно в основной массив, что потребовало создать отдельную функцию для правильного отображения.
+  </p>
+  <h2>Алгоритм</h2>
+  <ol>
+    <li>Рекурсивно разделить массив пополам, пока каждая часть не станет длиной 1.</li>
+    <li>На этапе объединения последовательно сливать части, сравнивая элементы из левой и правой половин.</li>
+    <li>Продолжать объединение, пока весь массив не станет одним отсортированным блоком.</li>
+  </ol>
+
+  <h2>Сложность</h2>
+  <h3>
+    <li>Худшее время: O(n * log(n))</li>
+    <li>Лучшее время: O(n * log(n))</li>
+    <li>Среднее время: O(n * log(n))</li>
+    <br/>
+    <li>Затраты памяти для списка: O(1)</li>
+    <li>Затраты памяти для массива: O(n)</li>
+  </h3>
+
+  <h2>Исходный код:</h2>
+  <a href="https://github.com/Ronopoldo/MergeSort" target="_blank">Ссылка на код на моём GitHub</a>
+
+  <br>
+  <p>Алгоритм считается одним из наиболее эффективных для сортировки <strong>больших массивов</strong>, но требует дополнительной памяти.</p>
+  <h2>
+    <a class="inSiteLinks" href="./mergeSort100.html">Merge Sort – пример на 100 элементов</a>
+  </h2>
+</div>
+
+<div class="sortingBlock">
+  <div class="sortingContainer">
+    <div class="controls">
+      <button class="controlButton" onclick="startAnimation(mergeSort)">Пуск анимации</button>
+      <button class="controlButton" onclick="stopAnimation()">Остановка анимации</button>
+      <button class="controlButton" onclick="shuffleData()">Перемешать</button>
+      <input type="range" id="speed" min="0" max="1000" value="500" />
+    </div>
+
+    <div class="visualization"> <!-- Ползунок -->
+      <div id="bars"></div> <!-- Столбики -->
+    </div>
+
+    <div>
+      <h2 id="operations">Выполнено операций: 0</h2>
+      <h2 id="checks">Выполнено проверок: 0</h2>
+    </div>
+
+  </div>
+</div>
+
+<script src="../src/coreScripts/isSorted.js"></script>
+<script src="../src/coreScripts/bulkAnimationScript.js"></script>
+<script src="../src/coreScripts/animationScript.js"></script>
+<!--<script src="../src/coreScripts/barsCreation.js"></script>-->
+<script src="../src/mergeSort.js"></script>
+<script src="../src/coreScripts/buttonsCore.js"></script>
+
+<script>
+  function createBars(array) {
+    const fixedHeight = 400;
+    barsContainer.innerHTML = "";
+    const maxValue = Math.max(...array);
+    barsContainer.style.height = `${fixedHeight}px`;
+    array.forEach((value, index) => {
+      const bar = document.createElement("div");
+      bar.classList.add("bar");
+      bar.style.height = `${(value / maxValue) * fixedHeight}px`;
+      barsContainer.appendChild(bar);
+    });
+  }
+</script>
+
+<script>
+  let array = [];
+  for (let i = 0; i < 25; i++) {
+    array[i] = (100 - (4 * i)) * 15;
+  }
+
+  let speed = 500;
+  let animationRunning = false;
+  const barsContainer = document.getElementById("bars");
+  const speedInput = document.getElementById("speed");
+  let checksHTML = document.getElementById("checks");
+  let opersHTML = document.getElementById("operations");
+
+  // РАБОТА ПОЛЗУНОЧКА
+  speedInput.addEventListener("input", () => {
+    speed = 1000 - speedInput.value;
+    console.log("Скорость:", speedInput.value);
+  });
+
+  createBars(array); // Создаём бары при загрузке страницы
+  let swaps = 0; // Счётчик для перемещений
+  let operations = 0; // Счётчик для сравнений
+</script>
+
+<!-- Скрипт для работы разворачивающегося меню -->
+<script>
+  function toggleMenu() {
+    const menuButton = document.querySelector('.menu-button');
+    const menu = document.querySelector('.menu');
+    menuButton.classList.toggle('active');
+    if (menuButton.classList.contains('active')) {
+      menu.style.display = 'block';
+    } else {
+      menu.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>
